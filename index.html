@@ -76,7 +76,8 @@
         map.getPane('pane_atooss_0').style.zIndex = 400;
         map.getPane('pane_atooss_0').style['mix-blend-mode'] = 'normal';
         var layer_atooss_0 = new L.geoJson(json_atooss_0, {
-            attribution: '<a href=""></a>',
+            attribution: '',
+            interactive: false,
             pane: 'pane_atooss_0',
             onEachFeature: pop_atooss_0,
             style: style_atooss_0_0,
@@ -121,7 +122,8 @@
         map.getPane('pane_tergromad_1').style.zIndex = 401;
         map.getPane('pane_tergromad_1').style['mix-blend-mode'] = 'normal';
         var layer_tergromad_1 = new L.geoJson(json_tergromad_1, {
-            attribution: '<a href=""></a>',
+            attribution: '',
+            interactive: false,
             pane: 'pane_tergromad_1',
             onEachFeature: pop_tergromad_1,
             style: style_tergromad_1_0,
@@ -154,7 +156,8 @@
         map.getPane('pane_oblast_2').style.zIndex = 402;
         map.getPane('pane_oblast_2').style['mix-blend-mode'] = 'normal';
         var layer_oblast_2 = new L.geoJson(json_oblast_2, {
-            attribution: '<a href=""></a>',
+            attribution: '',
+            interactive: false,
             pane: 'pane_oblast_2',
             onEachFeature: pop_oblast_2,
             style: style_oblast_2_0,
@@ -163,88 +166,80 @@
         map.addLayer(layer_oblast_2);
         function pop_soc_zaklad_3(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">fid</th>\
-                        <td>' + (feature.properties['fid'] !== null ? Autolinker.link(String(feature.properties['fid'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">name</th>\
-                        <td>' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">ID</th>\
-                        <td>' + (feature.properties['ID'] !== null ? Autolinker.link(String(feature.properties['ID'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Region</th>\
-                        <td>' + (feature.properties['Region'] !== null ? Autolinker.link(String(feature.properties['Region'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Tergromad</th>\
-                        <td>' + (feature.properties['Tergromad'] !== null ? Autolinker.link(String(feature.properties['Tergromad'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Nasel_pun</th>\
-                        <td>' + (feature.properties['Nasel_pun'] !== null ? Autolinker.link(String(feature.properties['Nasel_pun'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Str_bud</th>\
-                        <td>' + (feature.properties['Str_bud'] !== null ? Autolinker.link(String(feature.properties['Str_bud'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Type</th>\
+			        <tr>\
+                        <th scope="row">Тип</th>\
                         <td>' + (feature.properties['Type'] !== null ? Autolinker.link(String(feature.properties['Type'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Web</th>\
+                        <th scope="row">Назва</th>\
+                        <td>' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Назва області</th>\
+                        <td>' + (feature.properties['Region'] !== null ? Autolinker.link(String(feature.properties['Region'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Назва територіальної громади</th>\
+                        <td>' + (feature.properties['Tergromad'] !== null ? Autolinker.link(String(feature.properties['Tergromad'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Назва населеного пункту</th>\
+                        <td>' + (feature.properties['Nasel_pun'] !== null ? Autolinker.link(String(feature.properties['Nasel_pun'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Вулиця та номер будинку</th>\
+                        <td>' + (feature.properties['Str_bud'] !== null ? Autolinker.link(String(feature.properties['Str_bud'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Веб-сайт</th>\
                         <td>' + (feature.properties['Web'] !== null ? Autolinker.link(String(feature.properties['Web'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Grafik</th>\
+                        <th scope="row">Графік роботи</th>\
                         <td>' + (feature.properties['Grafik'] !== null ? Autolinker.link(String(feature.properties['Grafik'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Contacts</th>\
+                        <th scope="row">Контакти</th>\
                         <td>' + (feature.properties['Contacts'] !== null ? Autolinker.link(String(feature.properties['Contacts'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Onl_cons</th>\
+                        <th scope="row">Онлайн консультація</th>\
                         <td>' + (feature.properties['Onl_cons'] !== null ? Autolinker.link(String(feature.properties['Onl_cons'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">zap_onl</th>\
+                        <th scope="row">Запис онлайн</th>\
                         <td>' + (feature.properties['zap_onl'] !== null ? Autolinker.link(String(feature.properties['zap_onl'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">kilk_pers</th>\
+                        <th scope="row">Кількість персоналу</th>\
                         <td>' + (feature.properties['kilk_pers'] !== null ? Autolinker.link(String(feature.properties['kilk_pers'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">zg_kil_p</th>\
+                        <th scope="row">Загальна кількість послуг</th>\
                         <td>' + (feature.properties['zg_kil_p'] !== null ? Autolinker.link(String(feature.properties['zg_kil_p'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Pot</th>\
+                        <th scope="row">Розрахункова потужність закладу</th>\
                         <td>' + (feature.properties['Pot'] !== null ? Autolinker.link(String(feature.properties['Pot'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Vidsotoc</th>\
+                        <th scope="row">Відсоток наповнення</th>\
                         <td>' + (feature.properties['Vidsotoc'] !== null ? Autolinker.link(String(feature.properties['Vidsotoc'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">MTD</th>\
+                        <th scope="row">Проекти МТД</th>\
                         <td>' + (feature.properties['MTD'] !== null ? Autolinker.link(String(feature.properties['MTD'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Stan</th>\
+                        <th scope="row">Стан</th>\
                         <td>' + (feature.properties['Stan'] !== null ? Autolinker.link(String(feature.properties['Stan'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Prym</th>\
+                        <th scope="row">Примітка (до колонки стан)</th>\
                         <td>' + (feature.properties['Prym'] !== null ? Autolinker.link(String(feature.properties['Prym'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Per_p</th>\
+                        <th scope="row">Перелік послуг, що надаються</th>\
                         <td>' + (feature.properties['Per_p'] !== null ? Autolinker.link(String(feature.properties['Per_p'])) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -528,7 +523,7 @@
         bounds_group.addLayer(layer_soc_zaklad_3);
         map.addLayer(layer_soc_zaklad_3);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'soc_zaklad<br /><table><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_0.png" /></td><td>Управління соціального захисту населення</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_1.png" /></td><td>Державний центр комплексної реабілітації</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_2.png" /></td><td>Будинок-інтернат</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_3.png" /></td><td>Центр обліку бездомних осіб</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_4.png" /></td><td>Служба у справах дітей</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_5.png" /></td><td>Прозорий офіс</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_6.png" /></td><td>Територіальний центр соціального обслуговування</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_7.png" /></td><td>Центр соціальних служб для сім’ї, дітей та молоді</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_8.png" /></td><td>Фонд соціального страхування</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_9.png" /></td><td>Центр зайнятості</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_10.png" /></td><td>Відділ соціальних послуг</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_11.png" /></td><td>Інтернатний заклад</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_12.png" /></td><td>Центр  надання соціальних послуг</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_13.png" /></td><td>Центр для ВІЛ-інфікованих дітей та молоді</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_14.png" /></td><td>Центр комплексної реабілітації дітей з інвалідністю</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_15.png" /></td><td>Центр комплексної реабілітації для осіб з інвалідністю</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_16.png" /></td><td>Центр надання соціальних послуг</td></tr></table>': layer_soc_zaklad_3,'<img src="legend/oblast_2.png" /> oblast': layer_oblast_2,'<img src="legend/tergromad_1.png" /> tergromad': layer_tergromad_1,'<img src="legend/atooss_0.png" /> ato oss': layer_atooss_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'Заклади соціального захисту<br /><table><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_0.png" /></td><td>Управління соціального захисту населення</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_1.png" /></td><td>Державний центр комплексної реабілітації</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_2.png" /></td><td>Будинок-інтернат</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_3.png" /></td><td>Центр обліку бездомних осіб</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_4.png" /></td><td>Служба у справах дітей</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_5.png" /></td><td>Прозорий офіс</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_6.png" /></td><td>Територіальний центр соціального обслуговування</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_7.png" /></td><td>Центр соціальних служб для сім’ї, дітей та молоді</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_8.png" /></td><td>Фонд соціального страхування</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_9.png" /></td><td>Центр зайнятості</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_10.png" /></td><td>Відділ соціальних послуг</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_11.png" /></td><td>Інтернатний заклад</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_12.png" /></td><td>Центр  надання соціальних послуг</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_13.png" /></td><td>Центр для ВІЛ-інфікованих дітей та молоді</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_14.png" /></td><td>Центр комплексної реабілітації дітей з інвалідністю</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_15.png" /></td><td>Центр комплексної реабілітації для осіб з інвалідністю</td></tr><tr><td style="text-align: center;"><img src="legend/soc_zaklad_3_16.png" /></td><td>Центр надання соціальних послуг</td></tr></table>': layer_soc_zaklad_3,'<img src="legend/oblast_2.png" /> Межі областей': layer_oblast_2,'<img src="legend/tergromad_1.png" /> Межі тергромад': layer_tergromad_1,'<img src="legend/atooss_0.png" /> Тимчасово окупована територія': layer_atooss_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
