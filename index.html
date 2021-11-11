@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/_0.js"></script>
+        <script src="data/_1.js"></script>
+        <script src="data/_2.js"></script>
+        <script src="data/_3.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:20, minZoom:5
+        }).fitBounds([[46.4709093033,36.6525026287],[49.8526682561,40.9479297897]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 20
+        });
+        basemap0.addTo(map);
+        function setBounds() {
+        }
+        function pop__0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">NAME_UA</th>\
+                        <td>' + (feature.properties['NAME_UA'] !== null ? Autolinker.link(String(feature.properties['NAME_UA'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style__0_0() {
+            return {
+                pane: 'pane__0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(196,196,196,0.607843137255)',
+            }
+        }
+        map.createPane('pane__0');
+        map.getPane('pane__0').style.zIndex = 400;
+        map.getPane('pane__0').style['mix-blend-mode'] = 'normal';
+        var layer__0 = new L.geoJson(json__0, {
+            attribution: '',
+            interactive: false,
+            pane: 'pane__0',
+            onEachFeature: pop__0,
+            style: style__0_0,
+        });
+        bounds_group.addLayer(layer__0);
+        map.addLayer(layer__0);
+        function pop__1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Name_Obl</th>\
+                        <td>' + (feature.properties['Name_Obl'] !== null ? Autolinker.link(String(feature.properties['Name_Obl'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Name_Sub</th>\
+                        <td>' + (feature.properties['Name_Sub'] !== null ? Autolinker.link(String(feature.properties['Name_Sub'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type</th>\
+                        <td>' + (feature.properties['Type'] !== null ? Autolinker.link(String(feature.properties['Type'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style__1_0() {
+            return {
+                pane: 'pane__1',
+                opacity: 1,
+                color: 'rgba(25,71,140,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane__1');
+        map.getPane('pane__1').style.zIndex = 401;
+        map.getPane('pane__1').style['mix-blend-mode'] = 'normal';
+        var layer__1 = new L.geoJson(json__1, {
+            attribution: '',
+            interactive: false,
+            pane: 'pane__1',
+            onEachFeature: pop__1,
+            style: style__1_0,
+        });
+        bounds_group.addLayer(layer__1);
+        map.addLayer(layer__1);
+        function pop__2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Name</th>\
+                        <td>' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style__2_0() {
+            return {
+                pane: 'pane__2',
+                opacity: 1,
+                color: 'rgba(173,65,124,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane__2');
+        map.getPane('pane__2').style.zIndex = 402;
+        map.getPane('pane__2').style['mix-blend-mode'] = 'normal';
+        var layer__2 = new L.geoJson(json__2, {
+            attribution: '',
+            interactive: false,
+            pane: 'pane__2',
+            onEachFeature: pop__2,
+            style: style__2_0,
+        });
+        bounds_group.addLayer(layer__2);
+        map.addLayer(layer__2);
+        function pop__3(feature, layer) {
+            var popupContent = '<table>\
+			        <tr>\
+                        <th scope="row">Тип</th>\
+                        <td>' + (feature.properties['Type'] !== null ? Autolinker.link(String(feature.properties['Type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Назва</th>\
+                        <td>' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Назва області</th>\
+                        <td>' + (feature.properties['Region'] !== null ? Autolinker.link(String(feature.properties['Region'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Назва територіальної громади</th>\
+                        <td>' + (feature.properties['Tergromad'] !== null ? Autolinker.link(String(feature.properties['Tergromad'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Назва населеного пункту</th>\
+                        <td>' + (feature.properties['Nasel_pun'] !== null ? Autolinker.link(String(feature.properties['Nasel_pun'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Вулиця та номер будинку</th>\
+                        <td>' + (feature.properties['Str_bud'] !== null ? Autolinker.link(String(feature.properties['Str_bud'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Веб-сайт</th>\
+                        <td>' + (feature.properties['Web'] !== null ? Autolinker.link(String(feature.properties['Web'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Графік роботи</th>\
+                        <td>' + (feature.properties['Grafik'] !== null ? Autolinker.link(String(feature.properties['Grafik'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Контакти</th>\
+                        <td>' + (feature.properties['Contacts'] !== null ? Autolinker.link(String(feature.properties['Contacts'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Онлайн консультація</th>\
+                        <td>' + (feature.properties['Onl_cons'] !== null ? Autolinker.link(String(feature.properties['Onl_cons'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Запис онлайн</th>\
+                        <td>' + (feature.properties['zap_onl'] !== null ? Autolinker.link(String(feature.properties['zap_onl'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Кількість персоналу</th>\
+                        <td>' + (feature.properties['kilk_pers'] !== null ? Autolinker.link(String(feature.properties['kilk_pers'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Загальна кількість послуг</th>\
+                        <td>' + (feature.properties['zg_kil_p'] !== null ? Autolinker.link(String(feature.properties['zg_kil_p'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Розрахункова потужність закладу</th>\
+                        <td>' + (feature.properties['Pot'] !== null ? Autolinker.link(String(feature.properties['Pot'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Відсоток наповнення</th>\
+                        <td>' + (feature.properties['Vidsotoc'] !== null ? Autolinker.link(String(feature.properties['Vidsotoc'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Проекти МТД</th>\
+                        <td>' + (feature.properties['MTD'] !== null ? Autolinker.link(String(feature.properties['MTD'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Стан</th>\
+                        <td>' + (feature.properties['Stan'] !== null ? Autolinker.link(String(feature.properties['Stan'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Примітка (до колонки стан)</th>\
+                        <td>' + (feature.properties['Prym'] !== null ? Autolinker.link(String(feature.properties['Prym'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Перелік послуг, що надаються</th>\
+                        <td>' + (feature.properties['Per_p'] !== null ? Autolinker.link(String(feature.properties['Per_p'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style__3_0(feature) {
+            switch(String(feature.properties['Type'])) {
+                case 'Управління соціального захисту населення':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(201,102,145,1.0)',
+            }
+                    break;
+                case 'Державний центр комплексної реабілітації':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(199,209,13,1.0)',
+            }
+                    break;
+                case 'Будинок-інтернат':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(57,202,180,1.0)',
+            }
+                    break;
+                case 'Центр обліку бездомних осіб':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(169,0,2,1.0)',
+            }
+                    break;
+                case 'Служба у справах дітей':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,176,1.0)',
+            }
+                    break;
+                case 'Прозорий офіс':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(173,66,227,1.0)',
+            }
+                    break;
+                case 'Територіальний центр соціального обслуговування':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(203,83,59,1.0)',
+            }
+                    break;
+                case 'Центр соціальних служб для сім’ї, дітей та молоді':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,223,183,1.0)',
+            }
+                    break;
+                case 'Фонд соціального страхування':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(238,58,190,1.0)',
+            }
+                    break;
+                case 'Центр зайнятості':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(164,210,78,1.0)',
+            }
+                    break;
+                case 'Відділ соціальних послуг':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(126,208,222,1.0)',
+            }
+                    break;
+                case 'Інтернатний заклад':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,84,102,1.0)',
+            }
+                    break;
+                case 'Центр  надання соціальних послуг':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(212,58,217,1.0)',
+            }
+                    break;
+                case 'Центр для ВІЛ-інфікованих дітей та молоді':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(30,231,81,1.0)',
+            }
+                    break;
+                case 'Центр комплексної реабілітації дітей з інвалідністю':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,0,1.0)',
+            }
+                    break;
+                case 'Центр комплексної реабілітації для осіб з інвалідністю':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(225,161,0,1.0)',
+            }
+                    break;
+                case 'Центр надання соціальних послуг':
+                    return {
+                pane: 'pane__3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(230,169,115,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('pane__3');
+        map.getPane('pane__3').style.zIndex = 403;
+        map.getPane('pane__3').style['mix-blend-mode'] = 'normal';
+        var layer__3 = new L.geoJson(json__3, {
+            attribution: '<a href=""></a>',
+            pane: 'pane__3',
+            onEachFeature: pop__3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style__3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer__3);
+        map.addLayer(layer__3);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'Заклади соціального захисту<br /><table><tr><td style="text-align: center;"><img src="legend/_3_0.png" /></td><td>Управління соціального захисту населення</td></tr><tr><td style="text-align: center;"><img src="legend/_3_1.png" /></td><td>Державний центр комплексної реабілітації</td></tr><tr><td style="text-align: center;"><img src="legend/_3_2.png" /></td><td>Будинок-інтернат</td></tr><tr><td style="text-align: center;"><img src="legend/_3_3.png" /></td><td>Центр обліку бездомних осіб</td></tr><tr><td style="text-align: center;"><img src="legend/_3_4.png" /></td><td>Служба у справах дітей</td></tr><tr><td style="text-align: center;"><img src="legend/_3_5.png" /></td><td>Прозорий офіс</td></tr><tr><td style="text-align: center;"><img src="legend/_3_6.png" /></td><td>Територіальний центр соціального обслуговування</td></tr><tr><td style="text-align: center;"><img src="legend/_3_7.png" /></td><td>Центр соціальних служб для сім’ї, дітей та молоді</td></tr><tr><td style="text-align: center;"><img src="legend/_3_8.png" /></td><td>Фонд соціального страхування</td></tr><tr><td style="text-align: center;"><img src="legend/_3_9.png" /></td><td>Центр зайнятості</td></tr><tr><td style="text-align: center;"><img src="legend/_3_10.png" /></td><td>Відділ соціальних послуг</td></tr><tr><td style="text-align: center;"><img src="legend/_3_11.png" /></td><td>Інтернатний заклад</td></tr><tr><td style="text-align: center;"><img src="legend/_3_12.png" /></td><td>Центр  надання соціальних послуг</td></tr><tr><td style="text-align: center;"><img src="legend/_3_13.png" /></td><td>Центр для ВІЛ-інфікованих дітей та молоді</td></tr><tr><td style="text-align: center;"><img src="legend/_3_14.png" /></td><td>Центр комплексної реабілітації дітей з інвалідністю</td></tr><tr><td style="text-align: center;"><img src="legend/_3_15.png" /></td><td>Центр комплексної реабілітації для осіб з інвалідністю</td></tr><tr><td style="text-align: center;"><img src="legend/_3_16.png" /></td><td>Центр надання соціальних послуг</td></tr></table>': layer__3,'<img src="legend/_2.png" /> Межі області': layer__2,'<img src="legend/_1.png" /> Межі тергромад': layer__1,'<img src="legend/_0.png" /> Тимчасово окупована територія': layer__0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
